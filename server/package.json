@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elalamiDeveloper/Natours.git"
+  },
+  "author": "El Alami Idriss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elalamiDeveloper/Natours/issues"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
