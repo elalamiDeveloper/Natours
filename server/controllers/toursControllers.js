@@ -1,13 +1,6 @@
-import url from 'url';
 import fs from 'fs';
 
-const _dirname = url.fileURLToPath(new URL('.', import.meta.url));
-
-const tours = JSON.parse(
-  fs.readFileSync(`${_dirname}/../data/json/tours-simple.json`, {
-    encoding: 'utf-8',
-  })
-);
+import { _dirname, tours } from '../data/index.js';
 
 const getAllTours = (req, res) => {
   console.log(req.requestTime);
@@ -23,13 +16,7 @@ const getTourById = (req, res) => {
   const reqTourId = +req.params.id;
   const tour = tours.find((tour) => tour.id === reqTourId);
 
-  if (!tour)
-    return res.status(404).json({
-      status: 'fail',
-      message: 'Tour not found',
-    });
-
-  res.status(200).json({
+  return res.status(200).json({
     status: 'success',
     data: { tour },
   });
